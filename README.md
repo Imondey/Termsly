@@ -19,12 +19,12 @@ High   🔴            297         33.71%        Risky clauses
 Medium 🟠            282         32.01%        Moderate clauses
 
 
-🚀 **Key Features**
-1. Automated Web Scraping: Uses Selenium and BeautifulSoup to extract clean text from any policy URL.
-2. AI Risk Detection: Classifies individual sentences using a TF-IDF + Logistic Regression model to spot hidden risks.
-3. Smart Summarization: Uses Hugging Face Transformers (T5) to condense long legal texts into short summaries.
-4. Multi-Language Support: Translates summaries into Hindi, Bengali, Tamil, French, and Russian.
-5. PDF Report Generation: Exports a color-coded analysis report using FPDF.
+🚀 Key Features:
+1. Automated Scraping: Finds policy link from the given site and extract text from that policy link.
+2. AI Risk Detection: A trained ML model flags High, Medium clauses and give a overall risk prediction with a detailed Pie chart analysis.
+3. Smart Summarization: Summarize long and complex technical texts into a easy understandable summary.
+4. Multi-Language Support: Breaks language barriers by translating summaries into English, Hindi, Bengali, Tamil, French, and Russian.
+5. Instant Reports: Generates a color-coded PDF analysis for offline view.
 
 
 ⚙️ **How Risk is Calculated**
