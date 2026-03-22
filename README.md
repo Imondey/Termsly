@@ -45,3 +45,5 @@ Termsly employs a quantitative approach to risk detection.
         pytorch: Backend for the transformer models.
 5. Web Scraping: selenium, beautifulsoup4
 6. PDF Engine: fpdf2, reportlab
+
+Script: strealit run app.py

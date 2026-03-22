@@ -1,7 +1,6 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.pipeline import Pipeline
 import joblib
 import os
 
@@ -18,7 +17,7 @@ def train():
     if not os.path.exists(MODEL_DIR):
         os.makedirs(MODEL_DIR)
 
-    # 1. Load Data
+    # Load Data
     try:
         df = pd.read_csv(DATA_FILE)
     except FileNotFoundError:
@@ -36,20 +35,19 @@ def train():
     X = df['text']
     y = df['risk'] # Labels: 'safe', 'medium', 'high'
 
-    # 2. Create a model pipeline
     # We will convert text to numbers (TF-IDF) and then classify
     vectorizer = TfidfVectorizer(stop_words='english', max_df=0.7)
     classifier = LogisticRegression(multi_class='ovr', solver='liblinear') # Good for small datasets
 
-    # 3. Train the models
+    # Train the models
     print(f"Training on {len(X)} samples...")
     # First, train the vectorizer
     X_tfidf = vectorizer.fit_transform(X)
     
-    # Then, train the classifier
+    # Train the classifier
     classifier.fit(X_tfidf, y)
 
-    # 4. Save the models
+    # Save the models
     joblib.dump(vectorizer, VECTORIZER_PATH)
     joblib.dump(classifier, MODEL_PATH)
     
