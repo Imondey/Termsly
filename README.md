@@ -46,4 +46,4 @@ Termsly employs a quantitative approach to risk detection.
 5. Web Scraping: selenium, beautifulsoup4
 6. PDF Engine: fpdf2, reportlab
 
-Script: strealit run app.py
+Script: streamlit run app.py
