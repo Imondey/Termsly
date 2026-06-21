@@ -9,6 +9,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.os_manager import ChromeType
 # -----------------------------
 
 # Keywords to find policy pages
@@ -23,7 +24,7 @@ def get_selenium_driver():
     chrome_options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36')
     
     # This will automatically download and manage the correct chromedriver
-    service = ChromeService(ChromeDriverManager().install())
+    service = ChromeService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
     
     try:
         driver = webdriver.Chrome(service=service, options=chrome_options)
